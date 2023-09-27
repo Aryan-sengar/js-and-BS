@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap task1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <style>
+        .up {
+            background-color: skyblue;
+            height: 65px;
+        }
+
+        .navbar {
+            background-color: grey;
+        }
+
+        .hello {
+            color: white;
+            background-color: grey;
+            border: none;
+            font-weight: bold;
+        }
+
+        .content-2 {
+            background-color: rgb(62, 59, 59);
+            color: white;
+            height: 86vh;
+            width: 20%;
+        }
+
+        .content-1 {
+            height: 86vh;
+            background-color: aliceblue;
+            width: 80%;
+        }
+
+        .ft {
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="up">
+        <center>
+            <p style="font-size: 35px;">Ethnus Layout</p>
+        </center>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="padding-top: 0px; padding-bottom: 0px;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" style="font-weight: bold;">
+                <ul class="navbar-nav me-auto ">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="#">MENU</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                </ul>
+                <form class="d-flex mx-3">
+                    <button class="hello mx-4" type="submit">SIGNUP</button>
+                    <button class="hello mx-4" type="submit">LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="content d-flex" style="width: 100%;">
+        <div class="content-1">
+            <center class="ft">Write your content here</center>
+        </div>
+        <div class="content-2">
+            <center class="ft">This is</center>
+        </div>
+    </div>
+</body>
+</html>

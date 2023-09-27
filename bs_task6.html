@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap-task 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .t{
+            display: flex;
+            justify-content: center;
+        }
+        .outer{
+            /* margin-top: -60px; */
+            width: 500px;
+            height: 600px;
+            background-color: lightgrey;
+        }
+        .inner {
+            margin: 60px;
+            display: flex;
+            flex-direction: column;
+            /* width: 400px;
+            height: 500px; */
+            background-color: lightgrey;
+        }
+
+        button {
+            width: 380px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="t">
+        <div class="outer">
+            <div class="inner">
+                <form class="row g-3">
+                    <div class="col-md-12">
+                        <label for="validationServer01" class="form-label">Name</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer03"
+                            aria-describedby="validationServer03Feedback" required>
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                            Name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationServer03" class="form-label">Email</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer03"
+                            aria-describedby="validationServer03Feedback" required>
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                            Email is required.
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationServer03" class="form-label">Password</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer03"
+                            aria-describedby="validationServer03Feedback" required>
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                            Password is required.
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationServer04" class="form-label">Number of Hobbies</label>
+                        <input type="number" class="form-control" id="validationServer04">
+                        <!-- <div id="validationServer04Feedback" class="invalid-feedback">
+                      Please enter a valid number of hobbies.
+                    </div> -->
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-danger" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
