@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 3</title>
+    <style>
+        .box {
+            margin-left: 200px;
+            margin-top: 5%;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 5px, 15px, 5px, 15px;
+            /* background-color: black;
+            color: rgb(228, 208, 178); */
+            cursor: pointer;
+            border: 1px solid rgb(0, 183, 255);
+        }
+        label {
+            font-size: 17px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>JavaScript program to calculate multiplication and division of 
+            two numbers (input from user)</h3>
+            <br>
+            <label for="x">1st number :</label>
+            <input type="number" id="x">
+            <br>
+            <label for="y">2nd number :</label>
+            <input type="number" id="y">
+            <p id="res">
+    
+            </p>
+            <button onclick="mul()">Multiply</button>
+            <button onclick="div()">Divide</button>
+    </div>
+    <script>
+        function mul() {
+            var x = parseInt(document.getElementById("x").value, 10);
+            var y = parseInt(document.getElementById("y").value, 10);
+            document.getElementById("res").textContent="The Result is : " + x * y;
+        }
+        function div() {
+            var x = parseInt(document.getElementById("x").value, 10);
+            var y = parseInt(document.getElementById("y").value, 10);
+            document.getElementById("res").textContent="The Result is : " + x % y;
+        }
+    </script>
+</body>
+
+</html>

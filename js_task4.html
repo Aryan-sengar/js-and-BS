@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script task 4</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            display: block;
+            margin-left: 105px;
+            margin-top: 105px;
+        }
+
+        p {
+            font: weight 700px;
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 2px 10px 2px 10px;
+            margin: 10px;
+            border-radius: 3px transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button onclick="datef()">show date</button>
+        <br>
+        <p id="date"></p>
+        <br>
+        <button onclick="timef()">show Time</button>
+        <br>
+        <p id="dt"></p>
+    </div>
+    <script>
+        function datef() {
+            const currentDate = new Date();
+            const day = currentDate.getDate();
+            // const month = currentDate.getMonth();
+            const monthNames = [
+                "January", "February", "March", "April",
+                "May", "June", "July", "August",
+                "September", "October", "November", "December"
+            ];
+            // Get the current month and use it to look up the month name
+            const monthIndex = currentDate.getMonth();
+            const currentMonth = monthNames[monthIndex];
+            const year = currentDate.getFullYear();
+            const formattedDate = `${day}/${currentMonth}/${year}`;
+            document.getElementById('date').textContent = ` ${formattedDate}`;
+        }
+
+        function timef() {
+            const currentDate = new Date();
+            const daynames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const day = currentDate.getDay();
+            const aday = currentDate.getDate();
+            const monthNames = [
+                "Jan", "February", "Mar", "Apr",
+                "May", "Jun", "Jul", "Aug",
+                "Sept", "Oct", "Nov", "Dec"
+            ];
+            const monthIndex = currentDate.getMonth();
+            const currentMonth = monthNames[monthIndex];
+            const year = currentDate.getFullYear();
+            const today = daynames[day];
+            const hours = currentDate.getHours();
+            const minutes = currentDate.getMinutes();
+            const seconds = currentDate.getSeconds();
+            const formattedDate = `${currentMonth}  ${aday}  ${year}`;
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
+            const formattedLocalTime = `${hours}:${minutes}:${seconds}`;
+            const timeZoneOffsetMinutes = currentDate.getTimezoneOffset();
+            const timeZoneOffsetHours = Math.floor(Math.abs(timeZoneOffsetMinutes) / 60);
+            const timeZoneOffsetMinutesRemaining = Math.abs(timeZoneOffsetMinutes) % 60;
+            const timeZoneName = timeZoneOffsetMinutes > 0
+                ? `GMT-${timeZoneOffsetHours}${timeZoneOffsetMinutesRemaining}`
+                : `GMT+${timeZoneOffsetHours}:${timeZoneOffsetMinutesRemaining}`;
+            document.getElementById('dt').textContent = `${today} ${formattedDate} ${formattedLocalTime} ${timeZoneName}(India Standard Time)`;
+        }
+    </script>
+</body>
+
+</html>

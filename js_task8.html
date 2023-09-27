@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript-task 8</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .outer{
+            margin-left: 250px;
+            display: flex;
+            width: 75VW;
+            height: 107vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(lightyellow,pink);
+        }
+        h1{
+            color: blue;
+        }
+        label{
+            font-weight: bold;
+        }
+        p{
+            margin-left: 200px;
+        }
+        #lb{
+            font-weight: 200;
+        }
+        button{
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            border: 2px solid black;
+            padding-top: 2px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        tr{
+            height: 26px;
+        }
+        
+        #p1, #p2, #p3, #p4, #p5, #p6, #p7
+        , #p8, #p9, #p10{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <form name="myForm" action="" onsubmit="return validateForm()" method="post">
+            <h1>Registration Form</h1>
+            <br>
+            <table>
+                <tr>
+                    <td><label for="fn">First Name</label></td>
+                    <td><input type="text" id="fn"></td>
+                    <td><p id="p1"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="ln">Last Name</label></td>
+                    <td><input type="text" id="ln"></td>
+                    <td><p id="p2"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="em">Email</label></td>
+                    <td><input type="email" id="em"></td>
+                    <td><p id="p3"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">Password </label></td>
+                    <td><input type="password" id="pwd"></td>
+                    <td><p id="p4"></p></td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;"><label for="Rep">Re-enter password  </label></td>
+                    <td><input type="password" id="Rep"></td>
+                    <td><p id="p5"></p></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><label for="gen">Gender: </label></td>
+                    <td><input type="radio" name="gender" id="gen">Male</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="gender" id="gen">Female</td>
+                </tr>
+                <td><p id="p6"></p></td>
+                <tr>
+                    <td><label for="ag1">Age</label></td>
+                    <td><input type="text" id="ag1" class="full-width-input"></td>
+                    <td><p id="p7"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="pn">Phone Number</label></td>
+                    <td><input type="text id" id="pn">
+                        <td><p id="p8"></p></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="add">Address</label></td>
+                    <td><textarea name="" id="add" cols="30" rows="7"></textarea></td>
+                    <td><p id="p9"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="st">State</label></td>
+                    <td><input type="text" id="st"></td>
+                    <td><p id="p10"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="c">Country</label></td>
+                    <td><select name="" id="c">
+                            <option value="">Choose your Country</option>
+                            <option value="">India</option>
+                            <option value="">USA</option>
+                            <option value="">UK</option>
+                            <option value="">France</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lab">Languages Known</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="" id="lab">
+                        <label for="lab" id="lb">English</label>
+                        <input type="checkbox" name="" id="lab">
+                        <label for="" id="lb">Hindi</label>
+                        <input type="checkbox" name="" id="lab">
+                        <label for="" id="lb">Bhojpuri</label>
+                        <input type="checkbox" name="" id="lab">
+                        <label for="" id="lb">Marathi</label>
+                    </td>
+                </tr>
+                </tr>
+            </table>
+            <br>
+            <input type="checkbox" id="hck">
+            <label for="hck" style="font-weight: 200;">I Hereby Declare that all the given details are true</label>
+            <br>
+            <p>Log in to <a href="https://www.ethnus.com"> Ethnus</a> website</p>
+            <br>
+            <center>
+                <button>
+                    REGISTER
+                </button>
+            </center>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var uname = document.forms["myForm"]["fn"].value;
+            var lname = document.forms["myForm"]["ln"].value;
+            var mail = document.forms["myForm"]["em"].value;
+            var password = document.forms["myForm"]["pwd"].value;
+            var cp = document.forms["myForm"]["Rep"].value;
+            var gend = document.forms["myForm"]["gen"].value;
+            var ag = document.forms["myForm"]["ag1"].value;
+            var pno = document.forms["myForm"]["pn"].value;
+            var addr = document.forms["myForm"]["add"].value;
+            var stat = document.forms["myForm"]["st"].value;
+            if (uname === "" || lname === "" || mail === "" || password === "" || password !== cp || gend === "" || ag === "" || pno === "" || addr === "" || stat === "") {
+                document.getElementById("p1").innerHTML = "POOR" ;
+                document.getElementById("p2").innerHTML = "POOR" ;
+                document.getElementById("p3").innerHTML = "POOR" ;
+                document.getElementById("p4").innerHTML = "POOR" ;
+                document.getElementById("p5").innerHTML = "POOR OR MISMATCH" ;
+                document.getElementById("p7").innerHTML = "POOR" ;
+                document.getElementById("p8").innerHTML = "POOR" ;
+                document.getElementById("p9").innerHTML = "POOR" ;
+                document.getElementById("p10").innerHTML = "POOR" ;
+                return false;
+            }
+            // else if(lname === "") {
+            //     document.getElementById("p2").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (mail === "") {
+            //     document.getElementById("p3").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (password === "") {
+            //     document.getElementById("p4").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (password !== cp) {
+            //     document.getElementById("p5").innerHTML = "POOR OR MISMATCH";
+            //     return false;
+            // }
+            // else if (gend === "") {
+            //     document.getElementById("p6").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (ag === "") {
+            //     document.getElementById("p7").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (pno === "") {
+            //     document.getElementById("p8").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (addr === "") {
+            //     document.getElementById("p9").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            // else if (stat === "") {
+            //     document.getElementById("p10").innerHTML = "POOR" ;
+            //     return false;
+            // }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

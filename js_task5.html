@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript task 5</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+    
+        .table {
+            border-spacing: 15px;
+        }
+    
+        p{
+            color: red;
+        }
+        button {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 2px 10px 2px 10px;
+            margin: 10px;
+            border-radius: 3px transparent;
+        }
+        .input {
+            -webkit-transition: border-color 2ms; /Add border-color transition/
+            transition: border-color 2ms; /Add border-color transition/
+            border: 2px solid #ccc; /Add initial border style/
+        }
+    
+        .input:focus {
+            border-color: red; /Change border-color on focus/
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="box">
+        <form action="" name="myForm" onsubmit=" return valid()" method="post">
+            <table>
+                <tr>
+                    <td><label for="n">Name: </label></td>
+                    <td><input type="text" id="n" onfocus="uname()"></td>
+                    <td>
+                        <p id="p1"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="e">Email: </label></td>
+                    <td><input type="email" id="e"  onfocus="ename()"></td>
+                    <td>
+                        <p id="p2"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="u">Website: </label></td>
+                    <td><input type="url" id="u" onfocus="rname()"></td>
+                    <td>
+                        <p id="p3"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="m">Message: </label></td>
+                    <td><textarea name="" id="m" cols="25" rows="5" onfocus="fname()"></textarea></td>
+                    <td>
+                        <p id="p4"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button>Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function valid(){
+            var uname = document.forms["myForm"]["n"].value;
+            var mail = document.forms["myForm"]["e"].value;
+            var wb = document.forms["myForm"]["u"].value;
+            var msg = document.forms["myForm"]["m"].value;
+            if (uname === "" || mail === "" || wb ==="" || msg === ""){
+                document.getElementById("p1").innerHTML = "This field is Required" ;
+                document.getElementById("p2").innerHTML =  "A Valid Email Address is required" ;
+                document.getElementById("p3").innerHTML = "A Valid url is required";
+                document.getElementById("p4").innerHTML = "This field is required" ;
+                return false;
+            }  
+            return true;
+        }
+        //     if()
+        //     document.getElementById("p1").innerHTML = "This field is required";
+        // }
+        // function ename() {
+        //     document.getElementById("p2").innerHTML =;
+        // }
+        // function rname() {
+        //     document.getElementById("p3").innerHTML = ;
+        // }
+        // function fname() {
+        //     document.getElementById("p4").innerHTML = ";
+        // }
+    </script>
+</body>
+
+</html>

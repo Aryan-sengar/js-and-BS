@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript task1</title>
+    <style>
+        .box{
+            margin-left: 200px;
+            margin-top: 5%;
+        }
+        /* button{
+            font-size: 18px;
+            padding: 5px,15px,5px,15px;
+            background-color: black;
+            color: blanchedalmond;
+        } */
+        label{
+            font-size: 20px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Sort Letters in Alphabetical Order</h2>
+        <br>
+        <label for="inputString">Enter a string :  </label>
+        <input type="text" id="inputString" oninput="sortString()">
+        <br>
+        <p id="result"></p>
+    </div>
+    <script>
+        function sortString() {
+            const inputString = document.getElementById("inputString").value;
+            const sortedString = inputString.split('').sort().join('');
+            document.getElementById("result").textContent = "Sorted string: " + sortedString;
+        }
+    </script>
+</body>
+</html>
