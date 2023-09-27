@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+        .container {
+            height: 40vh;
+            margin-top: 4rem;
+            width: 90%;
+            margin-left: 2rem;
+        }
+
+        .container2 {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        img {
+            position: absolute;
+            left: 50px;
+            top: 10rem;
+        }
+
+        h3 {
+            margin-top: 1rem;
+            margin-left: 30rem;
+            font-size: 2rem;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="container">
+            <img src="t7.jpg" alt="image">
+        </div>
+        <h3>Click the following buttons to handle animation</h3>
+        <div class="container2">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+    <script>
+
+        var img = document.querySelector('img');
+
+        var interval;
+
+        function startAnimation() {
+
+            interval = setInterval(function () {
+                img.style.left = img.offsetLeft + 1 + 'px';
+            }, 10);
+
+        }
+
+        function stopAnimation() {
+            clearInterval(interval);
+        }
+
+        document.getElementById('start').addEventListener('click', startAnimation);
+        document.getElementById('stop').addEventListener('click', stopAnimation);
+    </script>
+</body>
+
+</html>
